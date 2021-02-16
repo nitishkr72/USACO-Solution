@@ -28,27 +28,19 @@ int main() {
 	long unsigned int cometVal=1, grpVal=1; 
 	int i=0;
 	while(i < lc) {
-		// cout << "Comet[i]:: " << (int)comet[i] - 64 << ", ";
 		cometVal *= (int)comet[i]- 64;
-		// cout << "CometVal:: " << cometVal << ", i::  " << i << endl;
 	        i += 1;	
-	} // cout << endl;
+	}
 	
 	i = 0;
 	while(i < lg) {
-		// cout << (int)grpName[i] - 64 << ", ";
 		grpVal *= (int)grpName[i] - 64;
 		i += 1;
-	} // cout << endl;
-
-	// cout << cometVal << " :: " << grpVal << endl;
-	// cout << cometVal%47 << " :: " << grpVal%47 << endl;
+	}
 	if(cometVal%47 == grpVal%47) {
 		fprintf(outfile, "%s", "GO\n");
-		// cout << "GO\n";
 	} else {
 		fprintf(outfile, "%s", "STAY\n");
-		// cout << "STAY\n";
 	}
 	fclose(infile);
 	fclose(outfile);
