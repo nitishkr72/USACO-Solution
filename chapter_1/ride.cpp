@@ -37,11 +37,12 @@ int main() {
 		grpVal *= (int)grpName[i] - 64;
 		i += 1;
 	}
-	if(cometVal%47 == grpVal%47) {
+	
+	if(cometVal%47 == grpVal%47)
 		fprintf(outfile, "%s", "GO\n");
-	} else {
+	else
 		fprintf(outfile, "%s", "STAY\n");
-	}
+	
 	fclose(infile);
 	fclose(outfile);
 	return 0;
