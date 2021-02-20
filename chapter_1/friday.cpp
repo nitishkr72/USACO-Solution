@@ -28,7 +28,7 @@ int main() {
 	infile.open("friday.in");
 	outfile.open("friday.out");
 
-	int N, week[7] = {0, 0, 0, 0, 0, 0, 0};		//in sequence MON, TUE, .. .. .. .. , SUN;
+	int N, week[7] = {0, 0, 0, 0, 0, 0, 0};		//in sequence SAT, SUN, .. .. .. .., FRI;
 	infile >> N;
 
 	int week1month = 2;
