@@ -1,53 +1,55 @@
 /*
 ID: nitish_4
-TASK: beads
+PROG: beads
 LANG: C++
 */
-
 #include <iostream>
 #include <fstream>
-
-using  namespace std;
-
-int n;
-
+#include <string>
+ 
+using namespace std;
+ 
 int main() {
-	ifstream infile;
-	// ofstream outfile;
+	ofstream outfile ("beads.out");
+	ifstream infile ("beads.in");
+	int N;
+	infile >> N;
+	string beads;
+	infile >> beads;
 
-	infile.open("beads.in");
-	// outfile.open("beads.out");
+	if(beads.length() != N)
+		N = beads.length();
 
-	infile >> n;
-	char b[n+1];
-	infile >> b;
-	b[n] = '\0';
-	
-	int N = 2*n;
-	char beads[N+1];
-	for(int i=0; i<n; i++)
-		beads[i] = b[i];
-	for(int i=n; i<N; i++)
-		beads[i] = b[i-n];
-	beads[N] = '\0';
+	// brute-force all possibilities
+	int cur = 0, max = 0;
+	char wbr;
+	bool switched;
 
-	// cout << beads << endl;
-
-	char c, prevc = beads[0];
-	int prevSum=0, currSum=0, maxSum;
-	maxSum = prevSum + currSum;
-	for(int i=0; i<N; i++) {
-		c = beads[i];
-
-		if(c == prevc || c == 'w') {
-			int count;
-			if(prevc == 'w') {
-				int k = i-1;
-				
+	for(int i = 0; i < N; ++i){
+		cur = 0;
+		switched = false;
+		wbr = 'w';
+		for(int j = 0; j < N; ++j){
+			const char cur_c = beads[(i + j) % N];
+			if(cur_c != 'w'){
+				if(wbr == 'w'){
+					wbr = cur_c;
+				}
+				else if(wbr != cur_c){
+					if(switched)
+						break;
+					else{
+						wbr = cur_c;
+						switched = true;
+					}
+				}
 			}
+			++cur;
 		}
+		if(cur > max)
+		max = cur;
 	}
 
-	infile.close();
+	outfile << max << '\n';
 	return 0;
 }
