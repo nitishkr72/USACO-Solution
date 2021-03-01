@@ -20,7 +20,6 @@ int main() {
 	if(beads.length() != N)
 		N = beads.length();
 
-	// brute-force all possibilities
 	int cur = 0, max = 0;
 	char wbr;
 	bool switched;
