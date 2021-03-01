@@ -51,5 +51,8 @@ int main() {
 	}
 
 	outfile << max << '\n';
+	
+	infile.close();
+	outfile.close();
 	return 0;
 }
