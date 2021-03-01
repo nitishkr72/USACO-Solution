@@ -1,2 +1,2 @@
-# USACO-training [![Updated Badge](https://badges.pufler.dev/updated/nitishkr72/USACO-training)](https://badges.pufler.dev)
+# USACO-training <style>[![Updated Badge](https://badges.pufler.dev/updated/nitishkr72/USACO-training)](https://badges.pufler.dev){text-align: right}</style>
 Containg problem solution to the problems contained in https://train.usaco.org/
